@@ -1,0 +1,29 @@
+---
+type: DataStore
+spec:
+  name: otlp
+  type: otlp
+  otlp:
+    type: otlp
+---
+type: Config
+spec:
+  analyticsEnabled: true
+---
+type: PollingProfile
+spec:
+  name: Custom Profile
+  strategy: periodic
+  default: true
+  periodic:
+    timeout: 2m
+    retryDelay: 3s
+---
+type: Demo
+spec:
+  name: pokeshop
+  type: pokeshop
+  enabled: true
+  pokeshop:
+    httpEndpoint: http://demo-api:8081
+    grpcEndpoint: demo-rpc:8082

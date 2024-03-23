@@ -1,0 +1,13 @@
+stages:         
+  - deploy
+test_deploy_with_agent:
+  stage: deploy
+  image:
+    name: bitnami/kubectl:latest
+    entrypoint: ['']
+  script:
+    #- kubectl config get-contexts
+    - kubectl config use-context d7769/advanceddigitalq:k8s-agent
+    - kubectl apply -f  ./kubernetes/opentelemetry-demo.yaml   -n otel-demo
+    - kubectl get pods -n otel-demo
+  when: manual

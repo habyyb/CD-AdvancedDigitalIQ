@@ -1,0 +1,25 @@
+type: Environment
+spec:
+  id: tracetesting-env
+  name: tracetesting-env
+  values:
+    - key: AD_SERVICE_ADDR
+      value: localhost:9555
+    - key: CART_SERVICE_ADDR
+      value: 
+    - key: CHECKOUT_SERVICE_ADDR
+      value: 
+    - key: CURRENCY_SERVICE_ADDR
+      value: 
+    - key: EMAIL_SERVICE_ADDR
+      value: 
+    - key: FRONTEND_ADDR
+      value: 
+    - key: PAYMENT_SERVICE_ADDR
+      value: 
+    - key: PRODUCT_CATALOG_SERVICE_ADDR
+      value: 
+    - key: RECOMMENDATION_SERVICE_ADDR
+      value: 
+    - key: SHIPPING_SERVICE_ADDR
+      value: 
