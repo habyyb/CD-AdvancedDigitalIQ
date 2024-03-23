@@ -6942,7 +6942,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: accountingservice
-          image: 'habib1234/accountingservice:1.4.0'
+          image: 'habib1234/accountingservice:latest'
           imagePullPolicy: IfNotPresent
           env:
           - name: OTEL_SERVICE_NAME
