@@ -6318,9 +6318,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8085
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8085
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-frontendproxy
