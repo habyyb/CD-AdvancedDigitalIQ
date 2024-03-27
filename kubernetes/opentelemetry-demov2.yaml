@@ -6301,59 +6301,7 @@ spec:
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-frontend
----
-# Source: opentelemetry-demo/templates/component.yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: opentelemetry-demo-frontendproxy
-  labels:
-    
-    opentelemetry.io/name: opentelemetry-demo-frontendproxy
-    app.kubernetes.io/instance: opentelemetry-demo
-    app.kubernetes.io/component: frontendproxy
-    app.kubernetes.io/name: opentelemetry-demo-frontendproxy
-    app.kubernetes.io/version: "1.4.0"
-    app.kubernetes.io/part-of: opentelemetry-demo
-spec:
-  type: NodePort
-  ports:
-    - port: 8080
-      name: tcp-service
-      targetPort: 8080
-      nodePort: 30000
-  selector:
-    
-    opentelemetry.io/name: opentelemetry-demo-frontendproxy
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: opentelemetry-demo-frontendproxy
-  labels:
-    app.kubernetes.io/name: opentelemetry-demo-frontendproxy
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      opentelemetry.io/name: opentelemetry-demo-frontendproxy
-  template:
-    metadata:
-      labels:
-        opentelemetry.io/name: opentelemetry-demo-frontendproxy
-    spec:
-      containers:
-      - name: frontendproxy
-        image: ghcr.io/open-telemetry/demo:1.4.0-frontendproxy
-        ports:
-        - containerPort: 8080
-        resources:
-          requests:
-            memory: "350Mi"
-            cpu: "100m"  # Request at least 100 millicpu
-          limits:
-            memory: "500Mi"
-            cpu: "200m"  # Maximum limit of 200 millicpu
+
 
 ---
 # Source: opentelemetry-demo/templates/component.yaml
