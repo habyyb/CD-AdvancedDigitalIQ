@@ -7781,22 +7781,19 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-frontendproxy
   labels:
-    
     opentelemetry.io/name: opentelemetry-demo-frontendproxy
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/component: frontendproxy
     app.kubernetes.io/name: opentelemetry-demo-frontendproxy
-    app.kubernetes.io/version: "1.4.0"
+    app.kubernetes.io/version: "1.4.1"  # Updated version
     app.kubernetes.io/part-of: opentelemetry-demo
 spec:
   selector:
     matchLabels:
-      
       opentelemetry.io/name: opentelemetry-demo-frontendproxy
   template:
     metadata:
       labels:
-        
         opentelemetry.io/name: opentelemetry-demo-frontendproxy
         app.kubernetes.io/instance: opentelemetry-demo
         app.kubernetes.io/component: frontendproxy
@@ -7805,79 +7802,25 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: frontendproxy
-          image: 'ghcr.io/open-telemetry/demo:1.4.0-frontendproxy'
-          imagePullPolicy: IfNotPresent
+          image: 'ghcr.io/open-telemetry/demo:1.4.1-frontendproxy'  # Updated image version
+          imagePullPolicy: Always  # Always pull the latest image
           ports:
-          
-          - containerPort: 8080
-            name: service
+            - containerPort: 8080
+              name: service
           env:
-          - name: OTEL_SERVICE_NAME
-            valueFrom:
-              fieldRef:
-                apiVersion: v1
-                fieldPath: metadata.labels['app.kubernetes.io/component']
-          - name: OTEL_K8S_NAMESPACE
-            valueFrom:
-              fieldRef:
-                apiVersion: v1
-                fieldPath: metadata.namespace
-          - name: OTEL_K8S_NODE_NAME
-            valueFrom:
-              fieldRef:
-                apiVersion: v1
-                fieldPath: spec.nodeName
-          - name: OTEL_K8S_POD_NAME
-            valueFrom:
-              fieldRef:
-                apiVersion: v1
-                fieldPath: metadata.name
-          - name: OTEL_K8S_POD_UID
-            valueFrom:
-              fieldRef:
-                apiVersion: v1
-                fieldPath: metadata.uid
-          - name: OTEL_COLLECTOR_NAME
-            value: 'opentelemetry-demo-otelcol'
-          - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
-            value: cumulative
-          - name: ENVOY_PORT
-            value: "8080"
-          - name: FRONTEND_PORT
-            value: "8080"
-          - name: FRONTEND_HOST
-            value: 'opentelemetry-demo-frontend'
-          - name: FEATURE_FLAG_SERVICE_PORT
-            value: "8081"
-          - name: FEATURE_FLAG_SERVICE_HOST
-            value: 'opentelemetry-demo-featureflagservice'
-          - name: LOCUST_WEB_PORT
-            value: "8089"
-          - name: LOCUST_WEB_HOST
-            value: 'opentelemetry-demo-loadgenerator'
-          - name: GRAFANA_SERVICE_PORT
-            value: "80"
-          - name: GRAFANA_SERVICE_HOST
-            value: 'opentelemetry-demo-grafana'
-          - name: JAEGER_SERVICE_PORT
-            value: "16686"
-          - name: JAEGER_SERVICE_HOST
-            value: 'opentelemetry-demo-jaeger-query'
-          - name: OTEL_COLLECTOR_PORT_GRPC
-            value: "4317"
-          - name: OTEL_COLLECTOR_PORT_HTTP
-            value: "4318"
-          - name: OTEL_COLLECTOR_HOST
-            value: $(OTEL_COLLECTOR_NAME)
-          - name: OTEL_RESOURCE_ATTRIBUTES
-            value: service.name=$(OTEL_SERVICE_NAME),service.instance.id=$(OTEL_K8S_POD_UID),service.namespace=opentelemetry-demo,k8s.namespace.name=$(OTEL_K8S_NAMESPACE),k8s.node.name=$(OTEL_K8S_NODE_NAME),k8s.pod.name=$(OTEL_K8S_POD_NAME)
+            # Your environment variables here
           resources:
             limits:
-              memory: 350Mi
+              memory: 512Mi  # Adjust as necessary
+              cpu: 0.5  # Adjust as necessary
+            requests:
+              memory: 256Mi  # Adjust as necessary
+              cpu: 0.1  # Adjust as necessary
           securityContext:
             runAsGroup: 101
             runAsNonRoot: true
             runAsUser: 101
+
 ---
 # Source: opentelemetry-demo/templates/component.yaml
 apiVersion: apps/v1
