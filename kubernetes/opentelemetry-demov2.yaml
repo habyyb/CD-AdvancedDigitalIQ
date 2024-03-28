@@ -6302,31 +6302,7 @@ spec:
     
     opentelemetry.io/name: opentelemetry-demo-frontend
 
----
 
-# Source: opentelemetry-demo/templates/component.yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: opentelemetry-demo-frontendproxy
-  labels:
-    
-    opentelemetry.io/name: opentelemetry-demo-frontendproxy
-    app.kubernetes.io/instance: opentelemetry-demo
-    app.kubernetes.io/component: frontendproxy
-    app.kubernetes.io/name: opentelemetry-demo-frontendproxy
-    app.kubernetes.io/version: "1.4.0"
-    app.kubernetes.io/part-of: opentelemetry-demo
-spec:
-  type: NodePort
-  ports:
-    - port: 8080
-      name: tcp-service
-      targetPort: 8080
-      nodePort: 30000
-  selector:
-    
-    opentelemetry.io/name: opentelemetry-demo-frontendproxy
 ---
 # Source: opentelemetry-demo/templates/component.yaml
 apiVersion: v1
@@ -7775,53 +7751,7 @@ spec:
             runAsNonRoot: true
             runAsUser: 1001
 ---
-# Source: opentelemetry-demo/templates/component.yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: opentelemetry-demo-frontendproxy
-  labels:
-    opentelemetry.io/name: opentelemetry-demo-frontendproxy
-    app.kubernetes.io/instance: opentelemetry-demo
-    app.kubernetes.io/component: frontendproxy
-    app.kubernetes.io/name: opentelemetry-demo-frontendproxy
-    app.kubernetes.io/version: "1.4.1"  # Updated version
-    app.kubernetes.io/part-of: opentelemetry-demo
-spec:
-  selector:
-    matchLabels:
-      opentelemetry.io/name: opentelemetry-demo-frontendproxy
-  template:
-    metadata:
-      labels:
-        opentelemetry.io/name: opentelemetry-demo-frontendproxy
-        app.kubernetes.io/instance: opentelemetry-demo
-        app.kubernetes.io/component: frontendproxy
-        app.kubernetes.io/name: opentelemetry-demo-frontendproxy
-    spec:
-      serviceAccountName: opentelemetry-demo
-      containers:
-        - name: frontendproxy
-          image: 'ghcr.io/open-telemetry/demo:1.4.1-frontendproxy'  # Updated image version
-          imagePullPolicy: Always  # Always pull the latest image
-          ports:
-            - containerPort: 8080
-              name: service
-          env:
-            # Your environment variables here
-          resources:
-            limits:
-              memory: 512Mi  # Adjust as necessary
-              cpu: 0.5  # Adjust as necessary
-            requests:
-              memory: 256Mi  # Adjust as necessary
-              cpu: 0.1  # Adjust as necessary
-          securityContext:
-            runAsGroup: 101
-            runAsNonRoot: true
-            runAsUser: 101
 
----
 # Source: opentelemetry-demo/templates/component.yaml
 apiVersion: apps/v1
 kind: Deployment
