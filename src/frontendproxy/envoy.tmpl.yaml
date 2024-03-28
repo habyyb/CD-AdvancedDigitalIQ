@@ -23,7 +23,7 @@ static_resources:
                       grpc_service:
                         envoy_grpc:
                           cluster_name: opentelemetry_collector_grpc
-                        timeout: 0.250s
+                        timeout: 1s
                       service_name: frontend-proxy
                 route_config:
                   name: local_route
@@ -65,8 +65,8 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: ${OTEL_COLLECTOR_HOST}
-                      port_value: ${OTEL_COLLECTOR_PORT_GRPC}
+                      address: 'opentelemetry-demo-otelcol'
+                      port_value: "4317"
     - name: opentelemetry_collector_http
       type: STRICT_DNS
       lb_policy: ROUND_ROBIN
@@ -77,8 +77,8 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: ${OTEL_COLLECTOR_HOST}
-                      port_value: ${OTEL_COLLECTOR_PORT_HTTP}
+                      address: 'opentelemetry-demo-otelcol'
+                      port_value: "4318"
     - name: frontend
       type: STRICT_DNS
       lb_policy: ROUND_ROBIN
@@ -89,8 +89,8 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: ${FRONTEND_HOST}
-                      port_value: ${FRONTEND_PORT}
+                      address: 'opentelemetry-demo-frontend'
+                      port_value: "8080"
     - name: featureflag
       type: STRICT_DNS
       lb_policy: ROUND_ROBIN
@@ -101,8 +101,8 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: ${FEATURE_FLAG_SERVICE_HOST}
-                      port_value: ${FEATURE_FLAG_SERVICE_PORT}
+                      address: 'opentelemetry-demo-featureflagservice'
+                      port_value: "8081"
     - name: loadgen
       type: STRICT_DNS
       lb_policy: ROUND_ROBIN
@@ -113,8 +113,8 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: ${LOCUST_WEB_HOST}
-                      port_value: ${LOCUST_WEB_PORT}
+                      address: 'opentelemetry-demo-loadgenerator'
+                      port_value: "8089"
     - name: grafana
       type: STRICT_DNS
       lb_policy: ROUND_ROBIN
@@ -125,8 +125,8 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: ${GRAFANA_SERVICE_HOST}
-                      port_value: ${GRAFANA_SERVICE_PORT}
+                      address: 'opentelemetry-demo-grafana'
+                      port_value: "16686"
     - name: jaeger
       type: STRICT_DNS
       lb_policy: ROUND_ROBIN
@@ -137,8 +137,8 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: ${JAEGER_SERVICE_HOST}
-                      port_value: ${JAEGER_SERVICE_PORT}
+                      address: 'opentelemetry-demo-jaeger-query'
+                      port_value: "16686"
 admin:
   address:
     socket_address:
