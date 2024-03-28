@@ -23,7 +23,7 @@ static_resources:
                       grpc_service:
                         envoy_grpc:
                           cluster_name: opentelemetry_collector_grpc
-                        timeout: 1s
+                        timeout: 0.250s
                       service_name: frontend-proxy
                 route_config:
                   name: local_route
