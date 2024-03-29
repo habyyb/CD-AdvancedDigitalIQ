@@ -6393,11 +6393,12 @@ metadata:
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 8080
       name: tcp-service
       targetPort: 8080
+      nodePort: 30001
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-productcatalogservice
