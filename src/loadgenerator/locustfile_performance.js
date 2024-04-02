@@ -2,8 +2,8 @@ import http from 'k6/http';
 import { sleep, check } from 'k6';
 import { SharedArray } from 'k6/data';
 
-const peopleJsonPath = '/src/loadgenerator/people.json';
-const people = open(peopleJsonPath);
+const peopleJson = open('./people.json'); // Adjusted to use a relative path
+const people = JSON.parse(peopleJson);
 
 const products = [
     "0PUK6V6EV0", "1YMWWN1N4O", "2ZYFJ3GM2N", "66VCHSJNUP", "6E92ZMYYFZ",
