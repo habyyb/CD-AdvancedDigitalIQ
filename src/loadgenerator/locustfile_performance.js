@@ -3,7 +3,7 @@ import { sleep, check } from 'k6';
 import { SharedArray } from 'k6/data';
 
 const peopleJsonPath = '/src/loadgenerator/people.json';
-const peopleJson = open(peopleJsonPath);
+const people = open(peopleJsonPath);
 
 const products = [
     "0PUK6V6EV0", "1YMWWN1N4O", "2ZYFJ3GM2N", "66VCHSJNUP", "6E92ZMYYFZ",
