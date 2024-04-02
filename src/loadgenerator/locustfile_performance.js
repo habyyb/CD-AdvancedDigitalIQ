@@ -3,7 +3,7 @@ import { sleep, check } from 'k6';
 import { SharedArray } from 'k6/data';
 
 // Loading the people data from a JSON file
-const peopleJson = open('./people.json'); // Ensure this path matches the location of your people.json file
+const peopleJson = open('people.json'); // Ensure this path matches the location of your people.json file
 const people = JSON.parse(peopleJson);
 
 const products = [
