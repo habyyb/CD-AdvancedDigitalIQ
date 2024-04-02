@@ -2,8 +2,11 @@ import http from 'k6/http';
 import { sleep, check } from 'k6';
 import { SharedArray } from 'k6/data';
 
+const currentPath = __ENV.PWD || '.';
+const peopleJsonPath = `${currentPath}/people.json`;
+
 // Loading the people data from a JSON file
-const peopleJson = open('people.json'); // Ensure this path matches the location of your people.json file
+const peopleJson = open(peopleJsonPath);
 const people = JSON.parse(peopleJson);
 
 const products = [
