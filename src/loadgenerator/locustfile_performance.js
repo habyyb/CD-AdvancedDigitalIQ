@@ -185,19 +185,19 @@ function randomChoice(arr) {
 
 export default function () {
     // Visit the homepage
-    const resHome = http.get('http://testsite.example.com/');
+    const resHome = http.get('http://192.168.178.101:31878/');
     check(resHome, { 'visited homepage successfully': (r) => r.status === 200 });
     sleep(1);
 
     // Browse product
     const product = randomChoice(products);
-    const resProduct = http.get(`http://testsite.example.com/api/products/${product}`);
+    const resProduct = http.get(`http://192.168.178.101:31878/api/products/${product}`);
     check(resProduct, { 'browsed product successfully': (r) => r.status === 200 });
     sleep(1);
 
     // Get recommendations
     const category = randomChoice(categories);
-    const resRecommendations = http.get(`http://testsite.example.com/api/recommendations?category=${category}`);
+    const resRecommendations = http.get(`http://192.168.178.101:31878/api/recommendations?category=${category}`);
     check(resRecommendations, { 'got recommendations successfully': (r) => r.status === 200 });
     sleep(1);
 
@@ -210,7 +210,7 @@ export default function () {
             userId: user,
         });
         const params = { headers: { 'Content-Type': 'application/json' } };
-        const resAddToCart = http.post(`http://testsite.example.com/api/cart`, payload, params);
+        const resAddToCart = http.post(`http://192.168.178.101:31878/api/cart`, payload, params);
         check(resAddToCart, { 'added to cart successfully': (r) => r.status === 200 });
         sleep(1);
 
@@ -220,7 +220,7 @@ export default function () {
             name: checkoutPerson.name,
             // Add any other required checkout fields from your people objects here
         });
-        const resCheckout = http.post(`http://testsite.example.com/api/checkout`, checkoutPayload, params);
+        const resCheckout = http.post(`http://192.168.178.101:31878/api/checkout`, checkoutPayload, params);
         check(resCheckout, { 'checkout completed successfully': (r) => r.status === 200 });
     }
 
