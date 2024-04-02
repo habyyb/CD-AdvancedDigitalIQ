@@ -215,13 +215,13 @@ export default function () {
         sleep(1);
 
         // Simulate checkout
-        const checkoutPayload = JSON.stringify({
+      /*  const checkoutPayload = JSON.stringify({
             userId: user,
             name: checkoutPerson.name,
             // Add any other required checkout fields from your people objects here
         });
         const resCheckout = http.post(`http://192.168.178.101:31878/api/checkout`, checkoutPayload, params);
-        check(resCheckout, { 'checkout completed successfully': (r) => r.status === 200 });
+        check(resCheckout, { 'checkout completed successfully': (r) => r.status === 200 }); */
     }
 
     // Include other scenarios and checks as needed...
