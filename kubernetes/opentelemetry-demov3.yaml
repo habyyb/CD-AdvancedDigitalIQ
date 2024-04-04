@@ -641,7 +641,7 @@ metadata:
   name: opentelemetry-demo-grafana
   annotations:
     harness.io/direct-apply: "true"
-    harness.io/track: "canary | stable"
+    harness.io/track: "canary"
   namespace: preproddemo
   labels:
     app.kubernetes.io/name: grafana
@@ -758,7 +758,7 @@ metadata:
   name: opentelemetry-demo-jaeger
   annotations:
     harness.io/direct-apply: "true"
-    harness.io/track: "canary | stable"
+    harness.io/track: "canary"
   labels:
     app.kubernetes.io/name: jaeger
     app.kubernetes.io/instance: opentelemetry-demo
