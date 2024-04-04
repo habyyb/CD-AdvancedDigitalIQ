@@ -25,6 +25,8 @@ metadata:
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "1.42.0"
     app.kubernetes.io/component: all-in-one
+  annotations:
+    harness.io/direct-apply: "true"
 ---
 # Source: opentelemetry-demo/charts/opentelemetry-collector/templates/serviceaccount.yaml
 apiVersion: v1
