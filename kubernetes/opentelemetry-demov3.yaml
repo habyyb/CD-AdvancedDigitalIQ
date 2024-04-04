@@ -29,6 +29,8 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: opentelemetry-demo-otelcol
+  namespace: preproddemo
+
   labels:
     app.kubernetes.io/name: otelcol
     app.kubernetes.io/instance: opentelemetry-demo
@@ -54,6 +56,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: opentelemetry-demo
+  namespace: preproddemo
   labels:
     
     opentelemetry.io/name: opentelemetry-demo
@@ -5811,6 +5814,7 @@ metadata:
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "9.4.7"
   name: opentelemetry-demo-grafana-clusterrole
+  namespace: preproddemo
 rules: []
 ---
 # Source: opentelemetry-demo/charts/prometheus/templates/clusterrole.yaml
@@ -5824,6 +5828,7 @@ metadata:
     chart: prometheus-20.2.0
     heritage: Helm
   name: opentelemetry-demo-prometheus-server
+  namespace: preproddemo
 rules:
   - apiGroups:
       - ""
@@ -5860,6 +5865,7 @@ kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: opentelemetry-demo-grafana-clusterrolebinding
+  namespace: preproddemo
   labels:
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: opentelemetry-demo
@@ -5884,6 +5890,7 @@ metadata:
     chart: prometheus-20.2.0
     heritage: Helm
   name: opentelemetry-demo-prometheus-server
+  namespace: preproddemo
 subjects:
   - kind: ServiceAccount
     name: opentelemetry-demo-prometheus-server
