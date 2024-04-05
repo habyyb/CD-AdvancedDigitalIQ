@@ -82,6 +82,8 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: opentelemetry-demo-grafana
+  annotations:
+    harness.io/direct-apply: "true"
   
 
   namespace: preproddemo
