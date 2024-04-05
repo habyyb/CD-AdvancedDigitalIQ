@@ -131,7 +131,6 @@ metadata:
     app.kubernetes.io/component: all-in-one
     prometheus.io/port: "14269"
     prometheus.io/scrape: "true"
-    harness.io/track: "stable"
 spec:
   replicas: 1
   strategy:
@@ -150,7 +149,6 @@ spec:
       annotations:
         prometheus.io/port: "14269"
         prometheus.io/scrape: "true"
-        harness.io/direct-apply: "true"
     spec:
       containers:
         - env:
