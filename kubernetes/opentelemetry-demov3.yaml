@@ -6654,7 +6654,7 @@ metadata:
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "9.4.7"
-    harness.io/track: "stable"
+    
 
 spec:
   replicas: 1
@@ -6670,6 +6670,7 @@ spec:
       labels:
         app.kubernetes.io/name: grafana
         app.kubernetes.io/instance: opentelemetry-demo
+        harness.io/track: "stable"
       annotations:
         checksum/config: 46e9428a9c36c5c45a84485e747d9911e5d9cc320ac4bec997c39688cfda1b43
         checksum/dashboards-json-config: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
