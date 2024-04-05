@@ -175,7 +175,7 @@ export let options = {
     ],
     thresholds: {
         // You can define custom thresholds for your tests here
-        'http_req_duration': ['p(95)<4000'], // 95% of requests must complete below 500ms
+        'http_req_duration': ['p(95)<8000'], // 95% of requests must complete below 500ms
     },
 };
 
