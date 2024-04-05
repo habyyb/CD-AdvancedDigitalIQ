@@ -150,7 +150,7 @@ spec:
       annotations:
         prometheus.io/port: "14269"
         prometheus.io/scrape: "true"
-        harness.io/track: "canary | stable"
+        harness.io/direct-apply: "true"
     spec:
       containers:
         - env:
@@ -247,7 +247,7 @@ spec:
         opentelemetry_community_demo: "true"
         prometheus.io/port: "9464"
         prometheus.io/scrape: "true"
-        harness.io/track: "canary | stable"
+        harness.io/direct-apply: "true"
       labels:
         app.kubernetes.io/name: otelcol
         app.kubernetes.io/instance: opentelemetry-demo
