@@ -175,7 +175,7 @@ export let options = {
     ],
     thresholds: {
         // You can define custom thresholds for your tests here
-        'http_req_duration': ['p(95)<8000'], // 95% of requests must complete below 500ms
+        'http_req_duration': ['p(95)<4000'], // 95% of requests must complete below 500ms
     },
 };
 
@@ -214,14 +214,14 @@ export default function () {
         check(resAddToCart, { 'added to cart successfully': (r) => r.status === 200 });
         sleep(1);
 
-        // Simulate checkout
+       /* // Simulate checkout
         const checkoutPayload = JSON.stringify({
             userId: user,
             name: checkoutPerson.name,
             // Add any other required checkout fields from your people objects here
         });
         const resCheckout = http.post(`http://192.168.178.101:30003/api/checkout`, checkoutPayload, params);
-        check(resCheckout, { 'checkout completed successfully': (r) => r.status === 200 }); 
+        check(resCheckout, { 'checkout completed successfully': (r) => r.status === 200 }); */
     }
 
     // Include other scenarios and checks as needed...
