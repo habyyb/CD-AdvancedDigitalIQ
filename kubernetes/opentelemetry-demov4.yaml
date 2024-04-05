@@ -134,7 +134,7 @@ metadata:
 spec:
   replicas: 1
   strategy:
-    type: Recreate
+    type: RollingUpdate
   selector:
     matchLabels:
       app.kubernetes.io/name: jaeger
@@ -149,7 +149,7 @@ spec:
       annotations:
         prometheus.io/port: "14269"
         prometheus.io/scrape: "true"
-        harness.io/track: "canary | stable"
+        harness.io/direct-apply: "true"
 
     spec:
       containers:
