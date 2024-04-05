@@ -11,6 +11,7 @@ metadata:
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "9.4.7"
+    harness.io/track: "stable"
 
 spec:
   replicas: 1
