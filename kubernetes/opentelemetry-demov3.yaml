@@ -10,6 +10,7 @@ metadata:
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "9.4.7"
+    harness.io/track: "stable"
   name: opentelemetry-demo-grafana
   annotations:
     harness.io/track: "canary | stable"
@@ -26,6 +27,7 @@ metadata:
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "1.42.0"
     app.kubernetes.io/component: all-in-one
+    harness.io/track: "stable"
   annotations:
     harness.io/track: "canary | stable"
 ---
@@ -43,6 +45,7 @@ metadata:
     app.kubernetes.io/name: otelcol
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "0.76.1"
+    harness.io/track: "stable"
 ---
 # Source: opentelemetry-demo/charts/prometheus/templates/serviceaccount.yaml
 apiVersion: v1
@@ -54,6 +57,7 @@ metadata:
     release: opentelemetry-demo
     chart: prometheus-20.2.0
     heritage: Helm
+    harness.io/track: "stable"
   name: opentelemetry-demo-prometheus-server
   namespace: preproddemo
   annotations:
@@ -76,6 +80,8 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
+    
 ---
 # Source: opentelemetry-demo/charts/grafana/templates/secret.yaml
 apiVersion: v1
@@ -91,6 +97,7 @@ metadata:
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "9.4.7"
+    harness.io/track: "stable"
 type: Opaque
 data:
   admin-user: "YWRtaW4="
@@ -110,6 +117,7 @@ metadata:
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "9.4.7"
+    harness.io/track: "stable"
 data:
   grafana.ini: |
     [analytics]
@@ -176,6 +184,7 @@ metadata:
     app.kubernetes.io/name: otelcol
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "0.76.1"
+    harness.io/track: "stable"
 data:
   relay: |
     connectors:
@@ -292,6 +301,7 @@ metadata:
     release: opentelemetry-demo
     chart: prometheus-20.2.0
     heritage: Helm
+    harness.io/track: "stable"
   name: opentelemetry-demo-prometheus-server
   namespace: preproddemo
 data:
@@ -339,6 +349,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 data:
   
   demo-dashboard.json: |
@@ -5832,6 +5843,7 @@ metadata:
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "9.4.7"
+    harness.io/track: "stable"
   name: opentelemetry-demo-grafana-clusterrole
   annotations:
     harness.io/track: "canary | stable"
@@ -5849,6 +5861,7 @@ metadata:
     release: opentelemetry-demo
     chart: prometheus-20.2.0
     heritage: Helm
+    harness.io/track: "stable"
   name: opentelemetry-demo-prometheus-server
   annotations:
     harness.io/track: "canary | stable"
@@ -5898,6 +5911,7 @@ metadata:
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "9.4.7"
+    harness.io/track: "stable"
 subjects:
   - kind: ServiceAccount
     name: opentelemetry-demo-grafana
@@ -5917,6 +5931,7 @@ metadata:
     release: opentelemetry-demo
     chart: prometheus-20.2.0
     heritage: Helm
+    harness.io/track: "stable"
   name: opentelemetry-demo-prometheus-server
   annotations:
     harness.io/track: "canary | stable"
@@ -5944,6 +5959,7 @@ metadata:
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "9.4.7"
+    harness.io/track: "stable"
 rules: []
 ---
 # Source: opentelemetry-demo/charts/grafana/templates/rolebinding.yaml
@@ -5959,6 +5975,7 @@ metadata:
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "9.4.7"
+    harness.io/track: "stable"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -5981,6 +5998,7 @@ metadata:
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "9.4.7"
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6005,6 +6023,7 @@ metadata:
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "1.42.0"
     app.kubernetes.io/component: service-agent
+    harness.io/track: "stable"
 spec:
   clusterIP: None
   ports:
@@ -6041,6 +6060,7 @@ metadata:
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "1.42.0"
     app.kubernetes.io/component: service-collector
+    harness.io/track: "stable"
 spec:
   clusterIP: None
   ports:
@@ -6080,6 +6100,7 @@ metadata:
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "1.42.0"
     app.kubernetes.io/component: service-query
+    harness.io/track: "stable"
 spec:
   clusterIP: None
   ports:
@@ -6107,6 +6128,7 @@ metadata:
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "0.76.1"
     component: standalone-collector
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports: 
@@ -6159,6 +6181,7 @@ metadata:
     release: opentelemetry-demo
     chart: prometheus-20.2.0
     heritage: Helm
+    harness.io/track: "stable"
   name: opentelemetry-demo-prometheus-server
   annotations:
     harness.io/track: "canary | stable"
@@ -6193,6 +6216,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-adservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6219,6 +6243,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-cartservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6245,6 +6270,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-checkoutservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: NodePort
   ports: 
@@ -6273,6 +6299,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-currencyservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6300,6 +6327,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-emailservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6326,6 +6354,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-featureflagservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6355,6 +6384,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-ffspostgres
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6381,6 +6411,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-frontend
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: NodePort
   ports:
@@ -6410,6 +6441,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-kafka
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6439,6 +6471,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-loadgenerator
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6465,6 +6498,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-paymentservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6491,6 +6525,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-productcatalogservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: NodePort
   ports:
@@ -6518,6 +6553,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-quoteservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6543,6 +6579,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-recommendationservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6568,6 +6605,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-redis
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6593,6 +6631,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-shippingservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   type: ClusterIP
   ports:
@@ -6615,7 +6654,7 @@ metadata:
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "9.4.7"
-    harness.io/allow-canary: "true"
+    harness.io/track: "stable"
 
 spec:
   replicas: 1
@@ -6735,6 +6774,7 @@ metadata:
     app.kubernetes.io/component: all-in-one
     prometheus.io/port: "14269"
     prometheus.io/scrape: "true"
+    harness.io/track: "stable"
 spec:
   replicas: 1
   strategy:
@@ -6832,6 +6872,7 @@ metadata:
     app.kubernetes.io/name: otelcol
     app.kubernetes.io/instance: opentelemetry-demo
     app.kubernetes.io/version: "0.76.1"
+    harness.io/track: "stable"
 spec:
   replicas: 1
   revisionHistoryLimit: 10
@@ -6933,6 +6974,7 @@ metadata:
     release: opentelemetry-demo
     chart: prometheus-20.2.0
     heritage: Helm
+    harness.io/track: "stable"
   name: opentelemetry-demo-prometheus-server
   annotations:
     harness.io/track: "canary | stable"
@@ -7031,6 +7073,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-accountingservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -7113,6 +7156,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-adservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -7196,6 +7240,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-cartservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -7286,6 +7331,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-checkoutservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -7386,6 +7432,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-currencyservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -7464,6 +7511,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-emailservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -7544,6 +7592,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-featureflagservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -7644,6 +7693,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-ffspostgres
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -7728,6 +7778,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-frauddetectionservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -7810,6 +7861,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-frontend
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -7913,6 +7965,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-kafka
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -7999,6 +8052,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-loadgenerator
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -8089,6 +8143,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-paymentservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -8171,6 +8226,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-productcatalogservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -8251,6 +8307,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-quoteservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -8335,6 +8392,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-recommendationservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -8421,6 +8479,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-redis
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
@@ -8499,6 +8558,7 @@ metadata:
     app.kubernetes.io/name: opentelemetry-demo-shippingservice
     app.kubernetes.io/version: "1.4.0"
     app.kubernetes.io/part-of: opentelemetry-demo
+    harness.io/track: "stable"
 spec:
   selector:
     matchLabels:
