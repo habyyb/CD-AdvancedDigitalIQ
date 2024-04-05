@@ -149,6 +149,8 @@ spec:
       annotations:
         prometheus.io/port: "14269"
         prometheus.io/scrape: "true"
+        harness.io/track: "canary | stable"
+
     spec:
       containers:
         - env:
