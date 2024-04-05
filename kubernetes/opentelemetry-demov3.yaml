@@ -12,7 +12,7 @@ metadata:
     app.kubernetes.io/version: "9.4.7"
   name: opentelemetry-demo-grafana
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
     
   namespace: preproddemo
 ---
@@ -27,7 +27,7 @@ metadata:
     app.kubernetes.io/version: "1.42.0"
     app.kubernetes.io/component: all-in-one
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
 ---
 # Source: opentelemetry-demo/charts/opentelemetry-collector/templates/serviceaccount.yaml
 apiVersion: v1
@@ -35,7 +35,7 @@ kind: ServiceAccount
 metadata:
   name: opentelemetry-demo-otelcol
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   namespace: preproddemo
 
@@ -57,7 +57,7 @@ metadata:
   name: opentelemetry-demo-prometheus-server
   namespace: preproddemo
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
   
 ---
 # Source: opentelemetry-demo/templates/serviceaccount.yaml
@@ -66,7 +66,7 @@ kind: ServiceAccount
 metadata:
   name: opentelemetry-demo
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
     
   namespace: preproddemo
   labels:
@@ -83,7 +83,7 @@ kind: Secret
 metadata:
   name: opentelemetry-demo-grafana
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
   
 
   namespace: preproddemo
@@ -103,7 +103,7 @@ kind: ConfigMap
 metadata:
   name: opentelemetry-demo-grafana
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
     
   namespace: preproddemo
   labels:
@@ -5834,7 +5834,7 @@ metadata:
     app.kubernetes.io/version: "9.4.7"
   name: opentelemetry-demo-grafana-clusterrole
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   namespace: preproddemo
 rules: []
@@ -5851,7 +5851,7 @@ metadata:
     heritage: Helm
   name: opentelemetry-demo-prometheus-server
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
     
   namespace: preproddemo
 rules:
@@ -5891,7 +5891,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: opentelemetry-demo-grafana-clusterrolebinding
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
  
   namespace: preproddemo
   labels:
@@ -5919,7 +5919,7 @@ metadata:
     heritage: Helm
   name: opentelemetry-demo-prometheus-server
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
     
   namespace: preproddemo
 subjects:
@@ -5937,7 +5937,7 @@ kind: Role
 metadata:
   name: opentelemetry-demo-grafana
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   namespace: preproddemo
   labels:
@@ -5952,7 +5952,7 @@ kind: RoleBinding
 metadata:
   name: opentelemetry-demo-grafana
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   namespace: preproddemo
   labels:
@@ -5974,7 +5974,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-grafana
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
     
   namespace: preproddemo
   labels:
@@ -5998,7 +5998,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-jaeger-agent
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   labels:
     app.kubernetes.io/name: jaeger
@@ -6034,7 +6034,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-jaeger-collector
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
     
   labels:
     app.kubernetes.io/name: jaeger
@@ -6073,7 +6073,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-jaeger-query
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   labels:
     app.kubernetes.io/name: jaeger
@@ -6100,7 +6100,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-otelcol
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   labels:
     app.kubernetes.io/name: otelcol
@@ -6161,7 +6161,7 @@ metadata:
     heritage: Helm
   name: opentelemetry-demo-prometheus-server
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   namespace: preproddemo
 spec:
@@ -6183,7 +6183,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-adservice
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
     
   labels:
     
@@ -6209,7 +6209,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-cartservice
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
     
   labels:
     
@@ -6235,7 +6235,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-checkoutservice
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   labels:
     
@@ -6263,7 +6263,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-currencyservice
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
   
   labels:
     
@@ -6290,7 +6290,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-emailservice
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
     
   labels:
     
@@ -6316,7 +6316,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-featureflagservice
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
   
   labels:
     
@@ -6345,7 +6345,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-ffspostgres
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
     
   labels:
     
@@ -6371,7 +6371,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-frontend
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   labels:
     
@@ -6400,7 +6400,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-kafka
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
     
   labels:
     
@@ -6429,7 +6429,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-loadgenerator
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   labels:
     
@@ -6455,7 +6455,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-paymentservice
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   labels:
     
@@ -6481,7 +6481,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-productcatalogservice
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   labels:
     
@@ -6508,7 +6508,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-quoteservice
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
    
   labels:
     
@@ -6534,7 +6534,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-recommendationservice
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
   labels:
     
     opentelemetry.io/name: opentelemetry-demo-recommendationservice
@@ -6559,7 +6559,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-redis
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
   labels:
     
     opentelemetry.io/name: opentelemetry-demo-redis
@@ -6584,7 +6584,7 @@ kind: Service
 metadata:
   name: opentelemetry-demo-shippingservice
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
   labels:
     
     opentelemetry.io/name: opentelemetry-demo-shippingservice
@@ -6609,7 +6609,7 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-grafana
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
   namespace: preproddemo
   labels:
     app.kubernetes.io/name: grafana
@@ -6636,7 +6636,7 @@ spec:
         checksum/dashboards-json-config: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
         checksum/sc-dashboard-provider-config: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
         checksum/secret: 168eac9549c1155906143bae680e232ce7a8acecd06af6a8ca9d6088db7473f2
-        harness.io/direct-apply: "true"
+        harness.io/track: "canary | stable"
     spec:
       
       serviceAccountName: opentelemetry-demo-grafana
@@ -6727,7 +6727,7 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-jaeger
   annotations:
-    harness.io/direct-apply: "true"
+    harness.io/track: "canary | stable"
   labels:
     app.kubernetes.io/name: jaeger
     app.kubernetes.io/instance: opentelemetry-demo
@@ -6753,7 +6753,7 @@ spec:
       annotations:
         prometheus.io/port: "14269"
         prometheus.io/scrape: "true"
-        harness.io/direct-apply: "true"
+        harness.io/track: "canary | stable"
     spec:
       containers:
         - env:
@@ -6827,7 +6827,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-otelcol
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     app.kubernetes.io/name: otelcol
@@ -6850,7 +6849,7 @@ spec:
         opentelemetry_community_demo: "true"
         prometheus.io/port: "9464"
         prometheus.io/scrape: "true"
-        harness.io/direct-apply: "true"
+        harness.io/track: "canary | stable"
       labels:
         app.kubernetes.io/name: otelcol
         app.kubernetes.io/instance: opentelemetry-demo
@@ -6936,7 +6935,6 @@ metadata:
     heritage: Helm
   name: opentelemetry-demo-prometheus-server
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   namespace: preproddemo
 spec:
@@ -7024,7 +7022,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-accountingservice
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -7107,7 +7104,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-adservice
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -7190,7 +7186,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-cartservice
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   
   labels:
@@ -7282,7 +7277,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-checkoutservice
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -7383,7 +7377,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-currencyservice
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -7462,7 +7455,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-emailservice
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -7543,7 +7535,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-featureflagservice
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -7644,7 +7635,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-ffspostgres
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -7729,7 +7719,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-frauddetectionservice
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -7812,7 +7801,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-frontend
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -7916,7 +7904,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-kafka
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -8003,7 +7990,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-loadgenerator
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -8094,7 +8080,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-paymentservice
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -8177,7 +8162,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-productcatalogservice
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -8258,7 +8242,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-quoteservice
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -8343,7 +8326,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-recommendationservice
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -8430,7 +8412,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-redis
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
@@ -8509,7 +8490,6 @@ kind: Deployment
 metadata:
   name: opentelemetry-demo-shippingservice
   annotations:
-    harness.io/direct-apply: "true"
     harness.io/track: "canary | stable"
   labels:
     
