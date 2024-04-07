@@ -6785,6 +6785,7 @@ spec:
       app.kubernetes.io/name: jaeger
       app.kubernetes.io/instance: opentelemetry-demo
       app.kubernetes.io/component: all-in-one
+      harness.io/track: "stable"
   template:
     metadata:
       labels:
